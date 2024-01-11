@@ -2,13 +2,25 @@
 include_once('config.php');
 while($row = $state->fetch()){
     $db = config();
-    $statement = $db->prepare("SELECT * FROM messages WHERE (receiving_id = {$row['user_id']}) OR (outgoing_id = {$row['user_id']}) ORDER BY msg_id DESC LIMIT 1");
+    $statement = $db->prepare("SELECT * FROM messages WHERE (receiving_id = :user) OR (outgoing_id = :user) ORDER BY msg_id DESC LIMIT 1");
+    $statement->execute([
+        "user" => $row['user_id'],
+    ]);
+    if($statement->rowCount()>0){
+        $result = $statement['msg'];
+    }else{
+        $result = "No Messages Yet.";
+    }
+
+    //trimming message
+    (strlen($result) > 26) ? $msg = substr($result, 0, 20): $result = $msg;
+
     $output .= '<a href="chat-area.php?user_id='. $row['user_id']  .'">
                 <div class="content">
                     <img src="php/images/'. $row['image'] .'" alt="">
                     <div class="details">
                         <span>' . $row['fname'] . " " . $row['lname'] . '</span>
-                        <p>Test Message</p>
+                        <p>'. $result .'</p>
                     </div>
                 </div>
                 <div class="status-dot">
