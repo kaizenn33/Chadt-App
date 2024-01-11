@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once("config.php");
+$outgoing_id = $_SESSION['user_id'];
 $db = config();
 $state = $db->prepare("SELECT * FROM users");
 $state -> execute();

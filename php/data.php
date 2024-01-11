@@ -14,14 +14,14 @@ while($row = $state->fetch()){
     }
 
     //trimming message
-    (strlen($result) > 26) ? $msg = $result : $msg = substr($result, 0, 13).'...';
-
+    (strlen($result) > 30) ? $msg = $result : $msg = substr($result, 0, 18).'..';
+    ($row['user_id'] == $row1['outgoing_id']) ? $you = "You: " : $you = "";
     $output .= '<a href="chat-area.php?user_id='. $row['user_id']  .'">
                 <div class="content">
                     <img src="php/images/'. $row['image'] .'" alt="">
                     <div class="details">
                         <span>' . $row['fname'] . " " . $row['lname'] . '</span>
-                        <p>'. $msg .'</p>
+                        <p>'. $you . $msg .'</p>
                     </div>
                 </div>
                 <div class="status-dot">
