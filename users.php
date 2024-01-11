@@ -39,7 +39,7 @@ if(!isset($_SESSION['user_id'])){
                         <p><?php echo $row['status'] ?></p>
                     </div>
                 </div>
-                <a href="#" class="logout">Logout</a>
+                <a href="php/logout.php" class="logout">Logout</a>
             </header>
             <form action="#" method="POST">
                 <div class="search">
