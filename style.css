@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playpen+Sans:wght@300;400;500;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;1,100;1,200;1,300;1,500&family=Quicksand:wght@400;500;600&family=Roboto+Condensed:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Inter';
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #93b5b8;
+}
+.wrapper{
+    background: white;
+    width: 460px;
+    border-radius: 17px;
+    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+                0 32px 64px -48px rgba(0, 0, 0, 0.5);
+}
+
+/* css of signup form */
+
+.form{
+    padding:25px 30px ;
+}
+.form header{
+    font-size: 28px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #283618;
+}
+.form form{
+    margin: 20px 0;
+}
+.form form .error-txt{
+    color:#721c24;
+    background: #f8d7da;
+    font-weight: 600;
+    padding: 8px 10px;
+    text-align: center;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    border: 1px solid #f5c6cb;
+}
+.name-wrapper {
+    display: flex;
+  }
+  
+  .name-wrapper .field {
+    flex: 1;
+    margin-right: 15px;
+  }
+  
+  .name-wrapper .field:last-child {
+    margin-right: 0;
+  }
+form .field label{
+    margin-bottom: 4px;
+    font-weight: 550;
+    opacity: 1.2;
+}
+.form form .field{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    position: relative;
+}
+.form form .field i{
+    position: absolute;
+    right: 15px;
+    color: #000;
+    top: 70%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    opacity: 0.9;
+}
+.form form .field .active::before{
+    content:"\f070";
+    color: #333;
+}
+.form form .field input{
+    outline: none;
+}
+.form form .input input{
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form form .Image input{
+    font-size: 16px;
+}
+.form form .button input{
+    margin-top: 13px;
+    height: 45px;
+    border: none;
+    font-size: 17px;
+    font-weight: 500;
+    background: #1d3557;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form .link{
+    text-align: center;
+    font-size: 17px;
+    margin: 10px 0;
+}
+.form .link a{
+    color: #333;
+}
+.form .link a:hover{
+    text-decoration: underline;
+}
+/* CSS for user area */
+
+.users{
+    padding: 25px 30px;
+
+}
+.users header, .users-list a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.wrapper img{
+    object-fit: cover;
+    border-radius: 50%;
+}
+.users header .content, .users-list a .content{
+    display: flex;
+    align-items: center;
+}
+.users header .content img{
+    width: 50px;
+    height: 50px;
+}
+.users header .details, .users-list .details{
+    margin-left: 15px;
+    color: #000;
+}
+.users header .details span, .users-list .details span{
+    font-size: 18px;
+    font-weight: 550;
+}
+.users header .details p{
+    font-size: 14px;
+    margin-top: 3px;
+}
+.users-list .details p{
+    font-size: 13px;
+    margin-top: 2px;
+}
+.users header .logout{
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.users .search{
+    margin: 17px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.users .search text{
+    font-size: 18px;
+}
+.users .search input{
+    position: absolute;
+    height: 42px;
+    width: calc(100% - 50px);
+    padding: 0 13px;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #ccc;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.users .search input.acitve{
+    opacity: 1;
+    pointer-events: auto;
+}
+.users .search button{
+    width: 47px;
+    height: 42px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: #333;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 0 5px 5px 0;
+}
+.users-list{
+    max-height: 350px;
+    overflow-y: auto;
+}
+.users-list::-webkit-scrollbar{
+    width: 0;
+}
+.users-list a{
+    padding-right: 15px;
+    padding-bottom: 10px;
+    padding-top: 3px;
+    margin-bottom: 15px;
+}
+.users-list a:last-child{
+    margin-bottom: 0;
+}
+.users-list a .content img{
+    height: 40px;
+    width: 40px;
+}
+.users-list a .status-dot{
+    font-size: 12px;
+    color: #333;
+}
+.users-list a .status-dot.offline{
+    font-size: 12px;
+    color: #67676a;
+}
+.users-list a .content p{
+    color: #67676a;
+}
+/* Chat CSS  */
+
+.chat-area header{
+    display: flex;
+    padding: 18px 30px;
+    align-items: center;
+
+}
+.chat-area header img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+.chat-area header .back-icon{
+    font-size: 18px;
+    color: #333;
+}
+.chat-area header span{
+    font-size: 17px;
+    font-weight: 500;
+    
+}
