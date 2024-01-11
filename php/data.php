@@ -7,13 +7,14 @@ while($row = $state->fetch()){
         "user" => $row['user_id'],
     ]);
     if($statement->rowCount()>0){
-        $result = $statement['msg'];
+        $row1 = $statement->fetch();
+        $result = $row1['msg'];
     }else{
         $result = "No Messages Yet.";
     }
 
     //trimming message
-    (strlen($result) > 26) ? $msg = substr($result, 0, 20): $result = $msg;
+    (strlen($result) > 26) ? $msg = substr($result, 0, 20): $msg = $result;
 
     $output .= '<a href="chat-area.php?user_id='. $row['user_id']  .'">
                 <div class="content">
