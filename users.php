@@ -43,8 +43,8 @@ if(!isset($_SESSION['user_id'])){
             </header>
             <form action="#" method="POST">
                 <div class="search">
-                    <span class="text">Select a user to chat</span>
-                        <input type="text" placeholder="Enter name to search" id="search" name="SearchTerm">
+                    <!-- <span class="text">Search</span><br> -->
+                        <input type="text" id="search" name="SearchTerm" placeholder="Search">
                         <button id="search-btn"><i class="fas fa-search"></i></button>
                 </div>
             </form>

@@ -181,10 +181,11 @@ form .field label{
     border-radius: 5px;
     outline: none;
     border: 1px solid #ccc;
-    opacity: 0;
+    opacity: 1;
+    border: 1px solid black;
 }
 #search.active{
-    opacity: 1;
+    
     pointer-events: auto;
 }
 .users .search button{
